@@ -6,9 +6,9 @@ const transactionController = new Command('transaction')
 transactionController
   .command('summarise all')
   .description('Log transaction data to the console')
-  .action(() => {
-    const test = summariseAll.getCsvData();
-    console.log(test)
+  .action(async () => {
+    const results = await summariseAll.getCsvData();
+    console.log(results)
   })
 
 export default transactionController

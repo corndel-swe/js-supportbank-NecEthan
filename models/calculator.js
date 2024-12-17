@@ -1,7 +1,7 @@
 
 export default class InvestmentCalculator {
-    static calculateSimpleInterest(principal, rate, time) {
-      const amount = principal * (1 + (rate / 100) * time);
+    static calculateSimpleInterest(fullAmount, rate, time) {
+      const amount = fullAmount * (1 + (rate / 100) * time);
       return amount;
     }
   

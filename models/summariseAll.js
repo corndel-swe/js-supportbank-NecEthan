@@ -8,14 +8,22 @@ export default class summariseAll {
 
     static async getCsvData() {
         const data = await fs.readFile('./data/Transactions2014.csv', 'utf-8');
-        const rows = data.split('\r\n')
-        let toNames = [];
+        const rows = data.split('\r\n').slice(2)
+        let summariseAll = [];
         rows.map(row => {
             const columns = row.split(',');
-            console.log(columns[2])
-            toNames.push(columns[2])
+            summariseAll.push(columns[2], columns[4])
         })
-        return data
+        return summariseAll
     }
 
-}
+    static async getAllCsvData(accountName) {
+        const data = await fs.readFile('./data/Transactions2014.csv', 'utf-8');
+        const rows = data.split('\r\n')
+    
+        for (let item of rows) {
+            console.log(item)
+           
+        }
+
+}}
